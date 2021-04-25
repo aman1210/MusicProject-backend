@@ -1,7 +1,14 @@
 {
-  "name": "music-project",
-  "version": "0.0.0",
-  "private": true,
+  "name": "music_project",
+  "version": "1.0.0",
+  "description": "A Node.js RESTful API project",
+  "main": "app.js",
+  "start": "node server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aman Srivastava",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
