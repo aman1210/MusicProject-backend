@@ -3,7 +3,6 @@ const Song = require("../models/songs");
 const Artist = require("../models/artists");
 const User = require("../models/users");
 
-cons = require("../middlewar");
 const router = express.Router();
 
 router.post("", (req, res, next) => {
