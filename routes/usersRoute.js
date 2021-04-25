@@ -24,6 +24,8 @@ router.post("/signup", (req, res, next) => {
           err: err,
         });
       });
+  }).catch((err)=>{
+    res.status(500).json({err:err});
   });
 });
 
@@ -59,6 +61,8 @@ router.post("/login", (req, res, next) => {
         admin: admin,
       });
     });
+  }).catch((err)=>{
+    res.status(500).json({err:err});
   });
 });
 
