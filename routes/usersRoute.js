@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users");
+const authStatus = require("../middleware/authStatus");
 
 const router = express.Router();
 
@@ -24,8 +25,6 @@ router.post("/signup", (req, res, next) => {
           err: err,
         });
       });
-  }).catch((err)=>{
-    res.status(500).json({err:err});
   });
 });
 
@@ -61,12 +60,10 @@ router.post("/login", (req, res, next) => {
         admin: admin,
       });
     });
-  }).catch((err)=>{
-    res.status(500).json({err:err});
   });
 });
 
-router.put("/playlist",  (req, res, next) => {
+router.put("/playlist", authStatus, (req, res, next) => {
   User.findOne({ _id: req.userData.userId }, (err, user) => {
     user.playlist = req.body;
     user.save();

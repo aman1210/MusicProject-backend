@@ -10,7 +10,7 @@ const app = express();
 mongoose
   .connect(
     "mongodb+srv://soulMusic:" +
-      process.env.MONGO_ATLAS_PASSWORD +
+      "Qhn9w8KvyhLHgAQm" +
       "@cluster0-xwigq.mongodb.net/soulMusic?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
