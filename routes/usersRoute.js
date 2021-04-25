@@ -63,7 +63,7 @@ router.post("/login", (req, res, next) => {
   });
 });
 
-router.put("/playlist", authStatus, (req, res, next) => {
+router.put("/playlist",  (req, res, next) => {
   User.findOne({ _id: req.userData.userId }, (err, user) => {
     user.playlist = req.body;
     user.save();

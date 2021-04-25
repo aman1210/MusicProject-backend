@@ -3,7 +3,7 @@ const Song = require("../models/songs");
 const Artist = require("../models/artists");
 const User = require("../models/users");
 
-const authStatus = require("../middleware/authStatus");
+cons = require("../middlewar");
 const router = express.Router();
 
 router.post("", (req, res, next) => {
@@ -33,7 +33,7 @@ router.post("", (req, res, next) => {
   });
 });
 
-router.put("/:id", authStatus, (req, res, next) => {
+router.put("/:id", (req, res, next) => {
   const song = new Song({
     _id: req.body.song._id,
     name: req.body.song.name,
