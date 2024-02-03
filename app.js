@@ -40,6 +40,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(cors());
+
 app.use("/api/users", usersRoute);
 app.use("/api/songs", songsRoute);
 app.use("/api/artists", artistsRoute);
