@@ -42,6 +42,8 @@ app.use((req, res, next) => {
 
 app.use(cors());
 
+app.options("*", cors());
+
 app.use("/api/users", usersRoute);
 app.use("/api/songs", songsRoute);
 app.use("/api/artists", artistsRoute);
