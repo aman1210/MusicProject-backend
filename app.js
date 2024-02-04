@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
 
 const usersRoute = require("./routes/usersRoute");
 const artistsRoute = require("./routes/artistsRoute");
@@ -9,9 +11,9 @@ const songsRoute = require("./routes/songsRoute");
 const app = express();
 mongoose
   .connect(
-    "mongodb+srv://soulMusic:" +
-      "Qhn9w8KvyhLHgAQm" +
-      "@cluster0-xwigq.mongodb.net/soulMusic?retryWrites=true&w=majority",
+    "mongodb+srv://amansrivastava101:" +
+      process.env.MONGO_ATLAS_PASSWORD +
+      "@soulmusic.2suhflq.mongodb.net/",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -20,7 +22,7 @@ mongoose
   .then(() => {
     console.log("Connected to database!");
   })
-  .catch(() => {
+  .catch((err) => {
     console.log("Failed");
   });
 
